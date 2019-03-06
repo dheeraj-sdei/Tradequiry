@@ -1,0 +1,73 @@
+<div class="preloader-backdrop"></div>
+<div>
+        <div class="bg-white pt-4 px-5" style="margin: -30px -30px 40px">
+                <div class="flexbox mb-4 mt-3">
+                    <div class="media"><span class="position-relative d-inline-block mr-4"><img class="rounded-circle" src="./assets/img/users/admin-image.png" alt="image" width="100" /><span class="badge-point badge-success avatar-badge" style="bottom: 5px;right: 14px;height: 14px;width: 14px;"></span></span>
+                        <div class="media-body">
+                            <div class="h4">{{userName}} </div>
+                            <div class="text-muted">{{Position}}</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav line-tabs m-0">
+                    <li class="nav-item"><a class="nav-link " data-toggle="tab" href="JavaScript:Void(0)"><i class="ti-briefcase nav-tabs-icon"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="JavaScript:Void(0)"><i class="ti-pulse nav-tabs-icon"></i>Timeline</a></li>
+                    <li class="nav-item"><a class="nav-link " data-toggle="tab" href="JavaScript:Void(0)"><i class="ti-settings nav-tabs-icon"></i>Settings</a></li>
+                </ul>
+            </div>
+           
+            <div class="tab-pane" id="tab-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="box-title">Settings</h4>
+                            <form action="javascript:;">
+                                    
+                                <div class="row" ng-form="form">
+                                        
+                                   
+                                              
+                                    <div class="col-sm-6">
+                                        <div class="md-form"><input class="md-form-control" type="text" placeholder="Full Name" name="username" [(ngModel)]="userDetail.Username"></div>
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <div class="md-form"><input class="md-form-control" type="text" placeholder="Age" name="Age" [(ngModel)]="userDetail.Age"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group-icon input-group-icon-right mb-4">
+                                            <div class="md-form mb-4"><input class="md-form-control m-0" type="text" placeholder="Address" name="Address" [(ngModel)]="userDetail.Address"><span class="input-icon input-icon-right"><i class="material-icons">place</i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group-icon input-group-icon-right mb-4">
+                                            <div class="md-form mb-4"><input class="md-form-control m-0" type="text" placeholder="Position" name="Position" [(ngModel)]="userDetail.Position"><span class="input-icon input-icon-right"><i class="material-icons">work</i></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group-icon input-group-icon-right mb-4">
+                                            <div class="md-form mb-4"><input class="md-form-control m-0" type="text" placeholder="Phone" name="Phone" [(ngModel)]="userDetail.Phone"><span class="input-icon input-icon-right"><i class="material-icons">phone</i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group-icon input-group-icon-right mb-4">
+                                            <div class="md-form mb-4"><input class="md-form-control m-0" type="text" placeholder="Email" name="Email" [(ngModel)]="userDetail.EmailId"><span class="input-icon input-icon-right"><i class="material-icons">email</i></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group mb-5"><label>Gender</label>
+                                    <div><label class="radio radio-inline radio-primary"><input type="radio" name="a" checked=""><span>Male</span></label><label class="radio radio-inline radio-primary"><input type="radio" name="a"><span>Female</span></label></div>
+                                </div> -->
+                              
+                                <div class="form-group"><button class="btn btn-primary mr-2 waves-effect waves-light" type="submit" (click)="updateProfie()">SUBMIT</button><button class="btn btn-light waves-effect" type="reset">CLEAR</button></div>
+                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="preloader-backdrop">
+                <script src="./assets/vendors/jquery/dist/jquery.min.js"></script>
+    

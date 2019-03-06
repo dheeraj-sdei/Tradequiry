@@ -1,0 +1,51 @@
+.tasks-list>li {
+padding-right: 0;
+padding-left: 0;
+padding: .8rem 1.5rem;
+}
+.task-actions {
+display: none;
+position: absolute;
+right: 20px;
+top: 50%;
+margin-top: -15px;
+}
+.task-actions>a.dropdown-toggle {
+color: #aaa;
+height: 30px;
+width: 30px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+.task-info {
+padding-left: 34px;
+}
+.tasks-list>li .checkbox input:checked~span {
+text-decoration: line-through;
+}
+.tasks-list>li:hover .task-actions {
+display: block
+}
+
+    
+.ng-scrollbar {
+    --scrollbar-size: 8px;
+    --scrollbar-thumb-color: rgb(94, 175, 255);
+    --scrollbar-thumb-hover-color: dodgerblue;
+    --scrollbar-border-radius: 4px;
+  }
+/* .scroll_bar{
+    overflow-x: hidden;
+} */
+
+
+
+/* .ng-scrollbar-layout[_ngcontent-c10] > .ng-scrollbar-layout[_ngcontent-c10] > .ng-scroll-view-container[_ngcontent-c10] > .ng-scroll-view[_ngcontent-c10]{
+    overflow-x: unset !important;
+}
+ */
+ /* .removebar{
+     overflow-y: unset !important
+ } */
+

@@ -1,0 +1,130 @@
+
+<subheader title='NGX Datatables' [breadcrumb]="['UI INTERFACE', 'NGX Datatables']"></subheader>
+
+<div class="alert alert-primary alert-bordered mb-4">
+	<p>A feature-rich yet lightweight data-table crafted for Angular.<br>See more examples in <a class="text-underline" href="https://swimlane.github.io/ngx-datatable/" target="_blank">demos</a> and <a class="text-underline" href="https://github.com/swimlane/ngx-datatable/tree/master/demo" target="_blank">demo sources.</a></p>
+	<a href="https://github.com/swimlane/ngx-datatable" class="btn btn-primary" target="_blank">Official Website</a>
+</div>
+
+<h3 class="mb-4 mt-5 text-primary">Basic table</h3>
+<div>
+  <ngx-datatable
+    class="material"
+    [rows]="rows2"
+    [columns]="columns"
+    [rowHeight]="'auto'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [columnMode]="'force'"
+    [loadingIndicator]="loadingIndicator"
+    [reorderable]="reorderable">
+  </ngx-datatable>
+</div>
+
+<h3 class="mb-4 mt-5 text-primary">Paging</h3>
+<div>
+	<ngx-datatable
+        class="material"
+        [rows]="rows"
+        [columns]="[{name:'Name'},{name:'Gender'},{name:'Company'}]"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [limit]="10">
+      </ngx-datatable>
+</div>
+
+<h3 class="mb-4 mt-5 text-primary">Filter</h3>
+<div>
+	<input
+        type='text'
+        style='padding:8px;margin:15px auto;width:30%;'
+        placeholder='Type to filter the name column...'
+        (keyup)='updateFilter($event)'
+      />
+	 <ngx-datatable
+        #table
+        class='material'
+        [columns]="columns"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [limit]="10"
+        [rows]='rows'>
+      </ngx-datatable>
+</div>
+
+<h3 class="mb-4 mt-5 text-primary">Selection</h3>
+
+<div>
+	<ngx-datatable
+          class="material"
+          [rows]="rows"
+          [columnMode]="'force'"
+          [columns]="columns"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [limit]="5"
+          [selected]="selected"
+          [selectionType]="'single'"
+          (activate)="onActivate($event)"
+          (select)='onSelect($event)'>
+        </ngx-datatable>
+</div>
+
+<h3 class="mb-4 mt-5 text-primary">Editing</h3>
+<div>
+	<ngx-datatable
+        #mydatatable
+        class="material"
+        [headerHeight]="50"
+        [limit]="5"
+        [columnMode]="'force'"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [rows]="rows">
+        <ngx-datatable-column name="Name">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span
+              title="Double click to edit"
+              (dblclick)="editing[rowIndex + '-name'] = true"
+              *ngIf="!editing[rowIndex + '-name']">
+              {{value}}
+            </span>
+            <input
+              autofocus
+              (blur)="updateValue($event, 'name', rowIndex)"
+              *ngIf="editing[rowIndex+ '-name']"
+              type="text"
+              [value]="value"
+            />
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Gender">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+             <span
+              title="Double click to edit"
+              (dblclick)="editing[rowIndex + '-gender'] = true"
+              *ngIf="!editing[rowIndex + '-gender']">
+              {{value}}
+            </span>
+            <select
+              *ngIf="editing[rowIndex + '-gender']"
+              (blur)="editing[rowIndex + '-gender'] = false"
+              (change)="updateValue($event, 'gender', rowIndex)"
+              [value]="value">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Age">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+</div>

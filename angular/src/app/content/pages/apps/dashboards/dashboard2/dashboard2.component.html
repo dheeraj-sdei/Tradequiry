@@ -1,0 +1,466 @@
+<div class="row">
+    <div class="col-md-6">
+        <subheader title="Dashboard" [breadcrumb]="['Dashboards', '']"></subheader>
+    </div>
+    <div class="col-md-6">
+        <div class="d-flex justify-content-end align-items-center">
+            <span class="flexbox pr-4 mr-4 border-right">
+                <span class="h6 mb-0 text-success">$ 54,105.00 USD</span>
+            </span>
+            <select class="form-control form-control-line">
+                <option>Tradequiry Simulated Broker</option>
+                <option>EURO</option>
+                <option>GBP</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div>
+
+        <div class="card-body py-3">
+            <div class="row">
+
+                <div class="col-sm-6 col-lg-3 border-right py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <div class="flexbox mb-3">
+                                <span class="text">Total Returns</span>
+                                <span class="text-danger">-1.12%</span>
+                            </div>
+                            <div class="h5 mb-0 font-20 text-success">+$548.50</div>
+                        </div>
+                        <div class="ml-3 d-none d-md-block">
+                            <span class="sparkline">
+                                <canvas width="70" height="35" style="display: inline-block; width: 70px; height: 35px; vertical-align: top;"></canvas>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 border-right py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <div class="flexbox mb-3">
+                                <span class="text">Today's Returns</span>
+                                <span class="text-success">+2.08%</span>
+                            </div>
+                            <div class="h5 mb-0 font-20 text-success">+$1,948.50</div>
+                        </div>
+                        <div class="ml-3 d-none d-md-block">
+                            <span class="sparkline">
+                                <canvas width="70" height="35" style="display: inline-block; width: 70px; height: 35px; vertical-align: top;"></canvas>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 border-right py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <div class="flexbox mb-3">
+                                <span class="text">Today's Algorithm Returns</span>
+                                <span class="text-success">+1.45%</span>
+                            </div>
+                            <div class="h5 mb-0 font-20 text-secondary">+$0</div>
+                        </div>
+                        <div class="ml-3 d-none d-md-block">
+                            <span class="sparkline">
+                                <canvas width="70" height="35" style="display: inline-block; width: 70px; height: 35px; vertical-align: top;"></canvas>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 py-3">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <div class="flexbox mb-3">
+                                <span class="text">Total Algorithm Returns</span>
+                                <span class="text-danger">-0.95%</span>
+                            </div>
+                            <div class="h5 mb-0 font-20 text-danger">-$9,548.50</div>
+                        </div>
+                        <div class="ml-3 d-none d-md-block">
+                            <span class="sparkline">
+                                <canvas width="70" height="35" style="display: inline-block; width: 70px; height: 35px; vertical-align: top;"></canvas>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-fullheight">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-5">
+                        <div>
+                            <h5 class="box-title mb-2">Portfolio Makeup</h5>
+
+
+
+
+                            <div class="text-muted font-13">Simple Subtitle</div>
+
+                        </div>
+                        <a class="text-muted" href="#">
+                            <i class="ti-info-alt"></i>
+                        </a>
+                    </div>
+                    <!-- <div class="mb-5"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div><canvas id="donut_chart_1" style="height: 220px; display: block; width: 459px;" width="459" height="220" class="chartjs-render-monitor"></canvas></div> -->
+                    <div class="mb-5" style="display: block">
+                        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+                    </div>
+                    <div>
+                        <div class="flexbox mb-3">
+                            <div>
+                                <span class="badge-point badge-warning rounded-0 mr-2"></span>
+                                <span>Cash</span>
+                            </div>
+                            <span class="h6 mb-0 font-16">+28%</span>
+                        </div>
+                        <div class="flexbox mb-3">
+                            <div>
+                                <span class="badge-point badge-primary rounded-0 mr-2"></span>
+                                <span>Stocks</span>
+                            </div>
+                            <span class="h6 mb-0 font-16">$9570</span>
+                        </div>
+                        <div class="flexbox mb-2">
+                            <div>
+                                <span class="badge-point badge-danger rounded-0 mr-2"></span>
+                                <span>Algorithm Allocated</span>
+                            </div>
+                            <span class="h6 mb-0 font-16">$3540</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-fullheight">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-4">
+                        <div>
+                            <h5 class="box-title mb-0">Stocks Held</h5>
+                        </div>
+                        <a class="text-muted" href="#">
+                            <i class="ti-more-alt"></i>
+                        </a>
+                    </div>
+                     <div class="tab-content">
+                        <div  style="height: 340px;">
+                                 <ng-scrollbar style="overflow:hidden !important">
+                 
+                                        <div style="padding: 1em; width:100% ;overflow-x: hidden;" class="tab-pane fade active show tab_scroll" id="tab-btc">
+                                                <div class="card-fullwidth-block mb-4">
+                                                        <div class="px-4 py-3 bg-success-50">
+                                                            <div class="flexbox mb-1 font-weight-bold">
+                                                                <span>GOOG</span>
+                                                                <span>$10.245.00</span>
+                                                            </div>
+                                                            <div class="flexbox">
+                                                                <span class="text-success">
+                                                                    <i class="fas fa-caret-up"></i> 2.04%</span>
+                                                                <span class="text-muted">5 shares</span>
+                                                            </div>
+                                                        </div>
+                
+                                                        <div class="px-4 py-3 bg-danger-50">
+                                                            <div class="flexbox mb-1 font-weight-bold">
+                                                                <span>YELP</span>
+                                                                <span>$10.245.00</span>
+                                                            </div>
+                                                            <div class="flexbox">
+                                                                <span class="text-danger">
+                                                                    <i class="fas fa-caret-down"></i> 1.24%</span>
+                                                                <span class="text-muted">120 shares</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-4 py-3">
+                                                            <div class="flexbox mb-1 font-weight-bold">
+                                                                <span>CGC</span>
+                                                                <span>$10.245.00</span>
+                                                            </div>
+                                                            <div class="flexbox">
+                                                                <span class="text">
+                                                                    <i class="fas fa-caret-up"></i>0%</span>
+                                                                <span class="text-muted">205.4 GBP</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-4 py-3 bg-danger-50">
+                                                            <div class="flexbox mb-1 font-weight-bold">
+                                                                <span>AMZN</span>
+                                                                <span>$10.245.00</span>
+                                                            </div>
+                                                            <div class="flexbox">
+                                                                <span class="text-danger">
+                                                                    <i class="fas fa-caret-down"></i> 1.24%</span>
+                                                                <span class="text-muted">2 shares</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-4 py-3 bg-success-50">
+                                                            <div class="flexbox mb-1 font-weight-bold">
+                                                                <span>TSLA</span>
+                                                                <span>$10.245.00</span>
+                                                            </div>
+                                                            <div class="flexbox">
+                                                                <span class="text-success">
+                                                                    <i class="fas fa-caret-up"></i> 2.37%</span>
+                                                                <span class="text-muted">10 shares</span>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                </ng-scrollbar> 
+                               
+
+                        </div>
+
+
+                        <div class="tab-pane fade" id="tab-eth">
+                            <div class="card-fullwidth-block mb-4">
+                                <div class="px-4 py-3">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>ETH/USD</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-success">
+                                            <i class="fas fa-caret-up"></i> 2.04%</span>
+                                        <span class="text-muted">340.5 USD</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3 bg-secondary-50">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>ETH/EURO</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-danger">
+                                            <i class="fas fa-caret-down"></i> 1.24%</span>
+                                        <span class="text-muted">120.2 EURO</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>ETH/GBP</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-success">
+                                            <i class="fas fa-caret-up"></i> 2.37%</span>
+                                        <span class="text-muted">205.4 GBP</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3 bg-danger-50">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>ETH/CAD</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-danger">
+                                            <i class="fas fa-caret-down"></i> 1.24%</span>
+                                        <span class="text-muted">120.2 CAD</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>ETH/USDT</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-success">
+                                            <i class="fas fa-caret-up"></i> 2.37%</span>
+                                        <span class="text-muted">205.4 USDT</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-ltc">
+                            <div class="card-fullwidth-block mb-4">
+                                <div class="px-4 py-3">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>LTC/USD</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-success">
+                                            <i class="fas fa-caret-up"></i> 2.04%</span>
+                                        <span class="text-muted">340.5 USD</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3 bg-secondary-50">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>LTC/EURO</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-danger">
+                                            <i class="fas fa-caret-down"></i> 1.24%</span>
+                                        <span class="text-muted">120.2 EURO</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>LTC/GBP</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-success">
+                                            <i class="fas fa-caret-up"></i> 2.37%</span>
+                                        <span class="text-muted">205.4 GBP</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3 bg-danger-50">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>LTC/CAD</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-danger">
+                                            <i class="fas fa-caret-down"></i> 1.24%</span>
+                                        <span class="text-muted">120.2 CAD</span>
+                                    </div>
+                                </div>
+                                <div class="px-4 py-3">
+                                    <div class="flexbox mb-1 font-weight-bold">
+                                        <span>LTC/USDT</span>
+                                        <span>$10.245.00</span>
+                                    </div>
+                                    <div class="flexbox">
+                                        <span class="text-success">
+                                            <i class="fas fa-caret-up"></i> 2.37%</span>
+                                        <span class="text-muted">205.4 USDT</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-fullheight">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-5">
+                        <h5 class="box-title mb-0">Algorithm Activity</h5>
+                        <a class="text-muted" href="#">View All</a>
+                    </div>
+                    <ul class="timeline timeline-default">
+                        <li class="timeline-item">2 Issue fixed
+                            <span class="font-13 text-muted ml-2">Just now</span>
+                        </li>
+                        <li class="timeline-item">
+                            <span>15 New orders
+                                <span class="badge badge-primary badge-pill ml-2">important</span>
+                            </span>
+                            <span class="font-13 text-muted ml-2">5 mins</span>
+                        </li>
+                        <li class="timeline-item">18 new orders sent
+                            <span class="font-13 text-muted ml-2">24 mins</span>
+                        </li>
+                        <li class="timeline-item">15 New messages
+                            <span class="font-13 text-muted ml-2">45 mins</span>
+                        </li>
+                        <li class="timeline-item">The invoice is ready
+                            <span class="font-13 text-muted ml-2">1 hrs</span>
+                        </li>
+                        <li class="timeline-item">
+                            <span>Server Error
+                                <span class="badge badge-success badge-pill ml-2">resolved</span>
+                            </span>
+                            <span class="font-13 text-muted ml-2">2 hrs</span>
+                        </li>
+                        <li class="timeline-item">
+                            <span>System Warning
+                                <a class="text-purple ml-2">Check</a>
+                            </span>
+                            <span class="font-13 text-muted ml-2">12:07</span>
+                        </li>
+                        <li class="timeline-item">24 new users registered
+                            <span class="font-13 text-muted ml-2">12:30</span>
+                        </li>
+                        <li class="timeline-item">
+                            <span>5 New Orders
+                                <span class="badge badge-warning badge-pill ml-2">important</span>
+                            </span>
+                            <span class="font-13 text-muted ml-2">13:45</span>
+                        </li>
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-4 pb-3">
+                        <i class="ti-briefcase text-muted font-40"></i>
+                    </div>
+                    <h5 class="mb-3">Manage Algorithms </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore neque.</p>
+                    <div>
+                        <a class="d-inline-flex align-items-center text-danger" href="javascript:;">
+                            <span class="mr-2">View More</span>
+                            <i class="fas fa-angle-right font-16"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-4 pb-3">
+                        <i class="ti-announcement text-muted font-40"></i>
+                    </div>
+                    <h5 class="mb-3">Manage Brokers</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore neque.</p>
+                    <div>
+                        <a class="d-inline-flex align-items-center text-danger" href="javascript:;">
+                            <span class="mr-2">View More</span>
+                            <i class="fas fa-angle-right font-16"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-4 pb-3">
+                        <i class="ti-world text-muted font-40"></i>
+                    </div>
+                    <h5 class="mb-3">Marketplace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore neque.</p>
+                    <div>
+                        <a class="d-inline-flex align-items-center text-danger" href="javascript:;">
+                            <span class="mr-2">View More</span>
+                            <i class="fas fa-angle-right font-16"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
